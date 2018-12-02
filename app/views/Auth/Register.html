@@ -1,0 +1,39 @@
+{{set . "title" "Home"}}
+{{template "header.html" .}}
+
+<header class="jumbotron" style="background-color:#A9F16C">
+  <div class="container">
+    <div class="row">
+      <h1>{{ .greeting }}</h1>
+      <p></p>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="span6">
+      {{template "flash.html" .}}
+    </div>
+
+    <div class="span6">
+      <form action="/Auth/Register" method="POST">
+        <input type="email" name="email" /><br/>
+        <input type="password" name="password" /><br/>
+        <input type="password" name="confirm_password" /><br/>
+        <input type="submit" value="Subscribe" />
+      </form>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="span6">
+        <a href="/Auth/Register">Register</a>
+        <a href="/Auth/Login">Login</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{template "footer.html" .}}
